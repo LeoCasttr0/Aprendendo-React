@@ -1,35 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
+// criando funçao
 function App() {
-  const [count, setCount] = useState(0)
-
+  // crio uma variavel use state ( especial )
+  // passo 2 parametros, a variavel inicial (que seu valor está definido no final)
+  // e a funçao que vai ser executada, e mudara nossa tela quando clicada
+  const [message, setMessage] = useState("ola mundo");
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      {/* mensagem */}
+      <h1>{message}</h1>
+
+      {/* botao que Aciona a funçao */}
+      <button
+        onClick={() => {
+          setMessage("fui clicado");
+        }}>
+        clique aqui
+      </button>
+    </div>
+  );
 }
 
-export default App
+// expprtando ela
+export default App;
